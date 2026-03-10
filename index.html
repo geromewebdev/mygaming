@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Portfolio | Professional & Gaming</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00f2ff; /* Cyber blue */
+            --secondary: #7000ff; /* Neon Purple */
+            --bg-dark: #0a0a0c;
+            --card-bg: #16161a;
+            --text-main: #e0e0e0;
+            --text-dim: #a0a0a0;
+            --accent-gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .nav-logo {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 5%;
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 12, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            text-shadow: 0 0 10px var(--primary);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            background: radial-gradient(circle at center, #1a1a2e 0%, var(--bg-dark) 70%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            background: var(--accent-gradient);
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(112, 0, 255, 0.4);
+        }
+
+        /* --- Grid Section --- */
+        .section {
+            padding: 5rem 5%;
+        }
+
+        .section-title {
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #25252b;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            transform: scale(1.02);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Mobile menu would go here */
+            }
+            
+            .hero {
+                height: 60vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">LEVEL_UP</div>
+        <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#work">PROJECTS</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="home">
+        <h1>CREATIVE <span style="color: var(--primary);">DEVELOPER</span></h1>
+        <p>Crafting high-performance digital experiences with a focus on immersive design and clean code.</p>
+        <a href="#work" class="btn">VIEW MISSION</a>
+    </header>
+
+    <section class="section" id="work">
+        <h2 class="section-title">Latest Quests</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>01. Cyber Interface</h3>
+                <p>A high-fidelity dashboard designed for real-time data tracking in competitive environments.</p>
+            </div>
+            <div class="card">
+                <h3>02. Shadow Engine</h3>
+                <p>Optimization of backend architecture for low-latency multiplayer interactions.</p>
+            </div>
+            <div class="card">
+                <h3>03. Neon Vault</h3>
+                <p>Secure, encrypted asset management system with a focus on UI/UX micro-interactions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about" style="background: #0e0e11;">
+        <h2 class="section-title">Character Stats</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>UI/UX Design</h3>
+                <p>Expertise in Figma, Adobe XD, and procedural animation.</p>
+            </div>
+            <div class="card">
+                <h3>Frontend Mastery</h3>
+                <p>React, Vue, and CSS-in-JS wizardry.</p>
+            </div>
+            <div class="card">
+                <h3>Strategic Thinking</h3>
+                <p>Solving complex problems with efficient, scalable logic.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 4rem; color: var(--text-dim); font-size: 0.8rem;">
+        &copy; 2026 PLAYER PORTFOLIO. ALL RIGHTS RESERVED. <br>
+        DESIGNED FOR THE NEXT GEN.
+    </footer>
+
+</body>
+</html>
